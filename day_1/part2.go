@@ -32,7 +32,7 @@ func Part2(f string) {
 			}
 			pointer = (pointer - dist + 100) % 100
 		case 'R':
-			if pointer != 0 && pointer+dist >= 100 {
+			if pointer+dist >= 100 {
 				count++
 			}
 			pointer = (pointer + dist) % 100

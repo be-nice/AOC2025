@@ -16,14 +16,13 @@ func Part1(f string) {
 
 	count := 0
 	pointer := 50
+
 	for _, el := range strings.Fields(data) {
 		dir := el[0]
 		dist, err := strconv.Atoi(el[1:])
 		if err != nil {
 			log.Fatalf("%d%s", dist, el[1:])
 		}
-
-		dist %= 100
 
 		switch dir {
 		case 'L':
@@ -35,7 +34,6 @@ func Part1(f string) {
 		if pointer == 0 {
 			count++
 		}
-
 	}
 
 	fmt.Println(count)

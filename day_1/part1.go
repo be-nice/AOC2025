@@ -6,16 +6,17 @@ import (
 	"fmt"
 	"log"
 	"strconv"
+	"strings"
 
 	"aoc2025/utils"
 )
 
 func Part1(f string) {
-	data := utils.ReadStringLines(path[f])
+	data := utils.ReadString(path[f])
 
 	count := 0
 	pointer := 50
-	for _, el := range data {
+	for _, el := range strings.Fields(data) {
 		dir := el[0]
 		dist, err := strconv.Atoi(el[1:])
 		if err != nil {

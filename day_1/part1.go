@@ -1,5 +1,5 @@
-// Package day1 implements functions for the dayx in
-// AOC. Each day should be in it's own package.
+// Package day1 implements functions for the day1 in
+// AOC 2025. Each day should be in it's own package.
 package day1
 
 import (

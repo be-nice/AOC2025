@@ -1,4 +1,4 @@
-package day3
+package day4
 
 import "aoc2025/types"
 
@@ -10,8 +10,8 @@ var Funcs = types.DayStruct{
 }
 
 var path = map[string]string{
-	"a":  "day_3/data/part1.txt",
-	"b":  "day_3/data/part2.txt",
-	"at": "day_3/data/test_part1.txt",
-	"bt": "day_3/data/test_part2.txt",
+	"a":  "day_4/data/part1.txt",
+	"b":  "day_4/data/part2.txt",
+	"at": "day_4/data/test_part1.txt",
+	"bt": "day_4/data/test_part2.txt",
 }

@@ -2,7 +2,7 @@ package day2
 
 import "aoc2025/types"
 
-var Day2 = types.DayStruct{
+var Funcs = types.DayStruct{
 	Parts: map[string]func(string){
 		"a": Part1,
 		"b": Part2,

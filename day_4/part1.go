@@ -15,7 +15,7 @@ func Part1(f string) {
 	for y := range len(data) {
 		for x := range len(data[0]) {
 			if data[y][x] == '@' {
-				if countEdge(data, pos{y, x}, false) {
+				if countEdge(data, pos{y, x}, true) {
 					count++
 				}
 			}

@@ -25,15 +25,17 @@ func countEdge(data [][]byte, pos pos, p1 bool) (moved bool) {
 	count := 0
 
 	for _, d := range dirs {
-		if pos.y+d.y < 0 || pos.y+d.y > len(data)-1 {
+		dx, dy := pos.x+d.x, pos.y+d.y
+
+		if dy < 0 || dy > len(data)-1 {
 			continue
 		}
 
-		if pos.x+d.x < 0 || pos.x+d.x > len(data[0])-1 {
+		if dx < 0 || dx > len(data[0])-1 {
 			continue
 		}
 
-		if data[pos.y+d.y][pos.x+d.x] == '@' {
+		if data[dy][dx] == '@' {
 			count++
 		}
 

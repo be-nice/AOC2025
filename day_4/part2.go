@@ -21,7 +21,6 @@ func Part2(f string) {
 
 	for len(toDelete) > 0 {
 		curr := toDelete[len(toDelete)-1]
-
 		toDelete = toDelete[:len(toDelete)-1]
 
 		for _, d := range dirs {

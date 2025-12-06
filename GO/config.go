@@ -7,6 +7,7 @@ import (
 	day4 "aoc2025/day_4"
 	day5 "aoc2025/day_5"
 	day6 "aoc2025/day_6"
+	day7 "aoc2025/day_7"
 	"aoc2025/types"
 )
 
@@ -17,4 +18,5 @@ var DaySequence = []types.DayStruct{
 	day4.Funcs,
 	day5.Funcs,
 	day6.Funcs,
+	day7.Funcs,
 }

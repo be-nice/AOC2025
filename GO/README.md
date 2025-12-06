@@ -1,6 +1,6 @@
 # Advent of Code 2025
 
-These are my solutions for this years AoC challenges
+These are my GO solutions for this years AoC challenges
 
 ## Usage
 

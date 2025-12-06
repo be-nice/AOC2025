@@ -1,1 +1,4 @@
 *.txt
+!CMakeLists.txt
+build
+AOC

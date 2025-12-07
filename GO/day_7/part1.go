@@ -26,17 +26,12 @@ func Part1(f string) {
 				continue
 			}
 
-			if line[col] == '^' {
-				if col-1 >= 0 {
-					next[col-1] = true
-				}
-
-				if col+1 < len(line) {
-					next[col+1] = true
-				}
-
+			switch line[col] {
+			case '^':
 				count++
-			} else {
+				next[col+1] = true
+				next[col-1] = true
+			default:
 				next[col] = true
 			}
 		}

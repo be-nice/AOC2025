@@ -28,19 +28,12 @@ func Part2(f string) {
 				continue
 			}
 
-			if line[col] == '^' {
-				if col-1 >= 0 {
-					next[col-1] += n
-				} else {
-					count += n
-				}
+			switch line[col] {
+			case '^':
+				next[col+1] += n
+				next[col-1] += n
+			default:
 
-				if col+1 < cols {
-					next[col+1] += n
-				} else {
-					count += n
-				}
-			} else {
 				next[col] += n
 			}
 		}

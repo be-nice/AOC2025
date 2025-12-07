@@ -16,8 +16,12 @@ func Part2(f string) {
 	beams := make([]int, cols)
 	beams[bytes.Index(data[0], []byte("S"))] = 1
 
+	next := make([]int, cols)
+
 	for _, line := range data[1:] {
-		next := make([]int, cols)
+		for i := range next {
+			next[i] = 0
+		}
 
 		for col, n := range beams {
 			if n == 0 {
@@ -41,7 +45,7 @@ func Part2(f string) {
 			}
 		}
 
-		beams = next
+		beams, next = next, beams
 	}
 
 	for _, n := range beams {

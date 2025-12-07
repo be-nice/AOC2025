@@ -14,8 +14,13 @@ func Part1(f string) {
 	beams := make([]bool, len(data[0]))
 	beams[bytes.Index(data[0], []byte("S"))] = true
 
+	next := make([]bool, len(beams))
+
 	for _, line := range data[1:] {
-		next := make([]bool, len(beams))
+		for i := range next {
+			next[i] = false
+		}
+
 		for col, ok := range beams {
 			if !ok {
 				continue
@@ -36,7 +41,7 @@ func Part1(f string) {
 			}
 		}
 
-		beams = next
+		beams, next = next, beams
 	}
 
 	fmt.Println(count)

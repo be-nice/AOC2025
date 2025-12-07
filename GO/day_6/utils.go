@@ -11,7 +11,7 @@ var (
 )
 
 func parseInput(data [][]byte) {
-	colWidth := -1
+	colWidth := 0
 	colWidths := make([]int, 0)
 	for _, el := range data[len(data)-1][1:] {
 		colWidth++

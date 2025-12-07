@@ -19,17 +19,8 @@ async function part2(path) {
       if (n === 0) return;
 
       if (line[col] === "^") {
-        if (col - 1 >= 0) {
-          next[col - 1] += n;
-        } else {
-          count += n;
-        }
-
-        if (col + 1 < cols) {
-          next[col + 1] += n;
-        } else {
-          count += n;
-        }
+        col - 1 >= 0 ? (next[col - 1] += n) : (count += n);
+        col + 1 < cols ? (next[col + 1] += n) : (count += n);
       } else {
         next[col] += n;
       }

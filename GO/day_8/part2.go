@@ -14,8 +14,8 @@ func Part2(f string) {
 
 	setMap := make([]map[int]struct{}, 0)
 
-	for _, val := range dists {
-		res = val.buildSets(&setMap, len(data))
+	for _, pair := range dists {
+		res = pair.buildSets(&setMap, len(data))
 		if res != -1 {
 			break
 		}

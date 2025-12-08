@@ -13,3 +13,13 @@ func SumList[T Number](n []T) T {
 
 	return res
 }
+
+func MultList[T Number](n []T) T {
+	var res T = 1
+
+	for _, el := range n {
+		res *= el
+	}
+
+	return res
+}

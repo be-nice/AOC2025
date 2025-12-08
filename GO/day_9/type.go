@@ -1,6 +1,6 @@
-// Package day8 implements functions for the day8 in
+// Package day9 implements functions for the day in
 // AOC 2025. Each day should be in it's own package.
-package day8
+package day9
 
 import "aoc2025/types"
 
@@ -12,8 +12,8 @@ var Funcs = types.DayStruct{
 }
 
 var path = map[string]string{
-	"a":  "day_8/data/part1.txt",
-	"b":  "day_8/data/part2.txt",
-	"at": "day_8/data/test_part1.txt",
-	"bt": "day_8/data/test_part2.txt",
+	"a":  "day_9/data/part1.txt",
+	"b":  "day_9/data/part2.txt",
+	"at": "day_9/data/test_part1.txt",
+	"bt": "day_9/data/test_part2.txt",
 }

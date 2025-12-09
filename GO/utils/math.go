@@ -23,3 +23,20 @@ func MultList[T Number](n []T) T {
 
 	return res
 }
+
+func FastAtoi(s string) int {
+	n := 0
+
+	for _, ch := range s {
+		n = n*10 + int(ch-'0')
+	}
+
+	return n
+}
+
+func Abs(n int) int {
+	if n < 0 {
+		return -n
+	}
+	return n
+}

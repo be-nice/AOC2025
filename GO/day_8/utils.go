@@ -2,6 +2,8 @@ package day8
 
 import (
 	"strings"
+
+	"aoc2025/utils"
 )
 
 const MAGICNUMDAY8 = 292_000_000
@@ -17,21 +19,11 @@ type pairs struct {
 func parseNums(s string) (int, int, int) {
 	nums := strings.Split(s, ",")
 
-	n1 := fastAtoi(strings.TrimSpace(nums[0]))
-	n2 := fastAtoi(strings.TrimSpace(nums[1]))
-	n3 := fastAtoi(strings.TrimSpace(nums[2]))
+	n1 := utils.FastAtoi(strings.TrimSpace(nums[0]))
+	n2 := utils.FastAtoi(strings.TrimSpace(nums[1]))
+	n3 := utils.FastAtoi(strings.TrimSpace(nums[2]))
 
 	return n1, n2, n3
-}
-
-func fastAtoi(s string) int {
-	n := 0
-
-	for _, ch := range s {
-		n = n*10 + int(ch-'0')
-	}
-
-	return n
 }
 
 func eucDist(a1, a2, b1, b2, c1, c2 int) int {

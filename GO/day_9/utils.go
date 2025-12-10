@@ -6,23 +6,35 @@ import (
 	"aoc2025/utils"
 )
 
-type pairs struct {
-	ax   int
-	ay   int
-	bx   int
-	by   int
-	area int
-}
-
 type point struct {
 	x int
 	y int
 }
 
 type segment struct {
-	start        point
-	end          point
-	isHorizontal bool
+	start point
+	end   point
+}
+
+func (s *segment) isIntersect(a, b point) bool {
+	recMinX := min(a.x, b.x) + 1
+	recMaxX := max(a.x, b.x) - 1
+	recMinY := min(a.y, b.y) + 1
+	recMaxY := max(a.y, b.y) - 1
+
+	edgeMinX := min(s.start.x, s.end.x)
+	edgeMaxX := max(s.start.x, s.end.x)
+	edgeMinY := min(s.start.y, s.end.y)
+	edgeMaxY := max(s.start.y, s.end.y)
+
+	if edgeMaxX < recMinX || edgeMinX > recMaxX {
+		return false
+	}
+	if edgeMaxY < recMinY || edgeMinY > recMaxY {
+		return false
+	}
+
+	return true
 }
 
 func parseNum(s string) (int, int) {

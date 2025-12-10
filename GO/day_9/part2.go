@@ -2,46 +2,59 @@ package day9
 
 import (
 	"fmt"
-	"slices"
 
 	"aoc2025/utils"
 )
 
 func Part2(f string) {
 	data := utils.ReadStringLines(path[f])
-	points := make([]point, len(data))
-	areas := make([]pairs, 0, len(data)*(len(data)-1)/2)
 	maxRect := -1
+
+	points := createCorners(data)
+	edges := createEdges(points)
+
+	for i := range len(points) - 1 {
+	hot_path:
+		for j := i + 1; j < len(points); j++ {
+			a := points[i]
+			b := points[j]
+			area := calcArea(a.x, a.y, b.x, b.y)
+
+			if area < maxRect {
+				continue
+			}
+
+			for _, edge := range edges {
+				if edge.isIntersect(points[i], points[j]) {
+					continue hot_path
+				}
+			}
+
+			maxRect = area
+		}
+	}
+
+	fmt.Println(maxRect)
+}
+
+func createCorners(data []string) []point {
+	points := make([]point, len(data))
 
 	for i, s := range data {
 		x, y := parseNum(s)
 		points[i] = point{x, y}
 	}
 
-	segments := buildsegments(points)
+	return points
+}
 
-	for i := range data {
-		for j := i + 1; j < len(data); j++ {
-			ax, ay := parseNum(data[i])
-			bx, by := parseNum(data[j])
-			area := calcArea(ax, ay, bx, by)
-			areas = append(areas, pairs{ax, ay, bx, by, area})
-		}
+func createEdges(points []point) []segment {
+	segments := make([]segment, len(points)+1)
+
+	for i := range len(points) - 1 {
+		segments[i] = segment{points[i], points[i+1]}
 	}
+	segments[len(segments)-1] = segment{points[len(points)-1], points[0]}
 
-	slices.SortFunc(areas, func(i, j pairs) int {
-		return j.area - i.area
-	})
-
-	for _, p := range areas {
-		rectMin := point{min(p.ax, p.bx), min(p.ay, p.by)}
-		rectMax := point{max(p.ax, p.bx), max(p.ay, p.by)}
-
-		if isValid(rectMin, rectMax, segments) {
-			maxRect = p.area
-			break
-		}
-	}
-
-	fmt.Println(maxRect)
+	return segments
 }

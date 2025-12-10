@@ -3,6 +3,7 @@ package main
 import (
 	day1 "aoc2025/day_1"
 	day10 "aoc2025/day_10"
+	day11 "aoc2025/day_11"
 	day2 "aoc2025/day_2"
 	day3 "aoc2025/day_3"
 	day4 "aoc2025/day_4"
@@ -25,4 +26,5 @@ var DaySequence = []types.DayStruct{
 	day8.Funcs,
 	day9.Funcs,
 	day10.Funcs,
+	day11.Funcs,
 }

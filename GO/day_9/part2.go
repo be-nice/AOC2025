@@ -2,6 +2,7 @@ package day9
 
 import (
 	"fmt"
+	"math/rand/v2"
 
 	"aoc2025/utils"
 )
@@ -12,6 +13,10 @@ func Part2(f string) {
 
 	points := createCorners(data)
 	edges := createEdges(points)
+
+	rand.Shuffle(len(points), func(i, j int) {
+		points[i], points[j] = points[j], points[i]
+	})
 
 	for i := range len(points) - 1 {
 	hot_path:

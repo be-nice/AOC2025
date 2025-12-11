@@ -30,5 +30,5 @@ func Part1(f string) {
 		sum += num
 	}
 
-	fmt.Println(sum)
+	fmt.Printf("Day 3 | Part 1: %d\n", sum)
 }

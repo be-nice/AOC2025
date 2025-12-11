@@ -34,5 +34,5 @@ func Part1(f string) {
 		res += colRes
 	}
 
-	fmt.Println(res)
+	fmt.Printf("Day 6 | Part 1: %d\n", res)
 }

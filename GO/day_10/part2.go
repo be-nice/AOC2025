@@ -49,7 +49,7 @@ func Part2(f string) {
 	close(resChan)
 	cwg.Wait()
 
-	fmt.Println(sum)
+	fmt.Printf("Day 10 | Part  2: %d\n", sum)
 }
 
 func parseJolts(s string) []int {

@@ -22,5 +22,5 @@ func Part1(f string) {
 		}
 	}
 
-	fmt.Println(count)
+	fmt.Printf("Day 4 | Part 1: %d\n", count)
 }

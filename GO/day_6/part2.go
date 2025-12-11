@@ -38,7 +38,7 @@ func Part2(f string) {
 		res += colRes
 	}
 
-	fmt.Println(res)
+	fmt.Printf("Day 6 | Part 2: %d\n", res)
 }
 
 func rotateLeft() {

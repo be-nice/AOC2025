@@ -44,7 +44,7 @@ func Part2(f string) {
 		}
 	}
 
-	fmt.Println(maxRect)
+	fmt.Printf("Day 9 | Part 2: %d\n", maxRect)
 }
 
 func createCorners(data []string) []point {

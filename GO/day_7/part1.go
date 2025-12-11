@@ -39,5 +39,5 @@ func Part1(f string) {
 		beams, next = next, beams
 	}
 
-	fmt.Println(count)
+	fmt.Printf("Day 7 | Part 1: %d\n", count)
 }

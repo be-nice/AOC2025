@@ -45,5 +45,5 @@ func Part2(f string) {
 		count += n
 	}
 
-	fmt.Println(count)
+	fmt.Printf("Day 7 | Part 2: %d\n", count)
 }

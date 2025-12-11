@@ -17,5 +17,5 @@ func Part1(f string) {
 	ranges := buildRanges(parts[0])
 	count := checkIDs(parts[1], ranges)
 
-	fmt.Println(count)
+	fmt.Printf("Day 5 | Part 1: %d\n", count)
 }

@@ -21,5 +21,5 @@ func Part1(f string) {
 		}
 	}
 
-	fmt.Println(maxRect)
+	fmt.Printf("Day 9 | Part 1: %d\n", maxRect)
 }

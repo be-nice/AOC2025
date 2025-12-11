@@ -19,5 +19,5 @@ func Part2(f string) {
 		count += inter.end - inter.start + 1
 	}
 
-	fmt.Println(count)
+	fmt.Printf("Day 5 | Part 2: %d\n", count)
 }

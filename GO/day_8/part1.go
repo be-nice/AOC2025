@@ -24,5 +24,5 @@ func Part1(f string) {
 		pair.buildSets(&setMap, -1)
 	}
 
-	fmt.Println(utils.MultList(getTopN(3, setMap)))
+	fmt.Printf("Day 8 | Part 1: %d\n", utils.MultList(getTopN(3, setMap)))
 }

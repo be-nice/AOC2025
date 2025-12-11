@@ -9,11 +9,25 @@ import (
 )
 
 func ValidateRunArgs(s []string) (int, string) {
-	if len(s) > 0 && (strings.ToLower(s[0]) == "h" || strings.ToLower(s[0]) == "help") || len(s) == 0 {
-		fmt.Println("-----USAGE-----")
-		fmt.Println("go run . <n>(1-12) < a | b | at | bt >")
+	if len(s) == 0 {
+		printUsage()
 		os.Exit(0)
 	}
+
+	if len(s) == 1 {
+		if strings.ToLower(s[0]) == "h" || strings.ToLower(s[0]) == "help" {
+			printUsage()
+			os.Exit(0)
+		}
+
+		if strings.ToLower(s[0]) == "all" {
+			return -1, "all"
+		}
+
+		printUsage()
+		os.Exit(0)
+	}
+
 	if len(s) != 2 {
 		log.Fatalf("Expected two arguments, got <%d>\n", len(s))
 	}
@@ -30,7 +44,7 @@ func parseDayFlag(s string) int {
 		log.Fatalf("Expected first argument to be between <1-12>, got <%d>\n", day)
 	}
 
-	return day
+	return day - 1
 }
 
 func parsePartFlag(s string) string {
@@ -44,4 +58,9 @@ func parsePartFlag(s string) string {
 	}
 
 	return parts[0]
+}
+
+func printUsage() {
+	fmt.Println("-----USAGE-----")
+	fmt.Println("go run . <n>(1-12) < a | b | at | bt >")
 }

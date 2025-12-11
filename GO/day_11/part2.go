@@ -46,5 +46,5 @@ func Part2(f string) {
 
 	sum := dfs("svr", false, false)
 
-	fmt.Println(sum)
+	fmt.Printf("Day 11 | Part 2: %d\n", sum)
 }

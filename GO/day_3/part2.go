@@ -17,7 +17,7 @@ func Part2(f string) {
 		sum += num
 	}
 
-	fmt.Println(sum)
+	fmt.Printf("Day 3 | Part 2: %d\n", sum)
 }
 
 func subSeq(digits []byte) []byte {

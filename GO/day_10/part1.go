@@ -39,7 +39,7 @@ func Part1(f string) {
 	close(resChan)
 	cwg.Wait()
 
-	fmt.Println(sum)
+	fmt.Printf("Day 10 | Part 1: %d\n", sum)
 }
 
 func parseLine(s string) (uint16, []uint16) {

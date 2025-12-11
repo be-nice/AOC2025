@@ -14,5 +14,5 @@ func Part1(f string) {
 	ranges, maxEnd, maxDigits := parseInput(data)
 	sum := generateRepeatedIDs(ranges, maxEnd, maxDigits, 2, 2)
 
-	fmt.Println(sum)
+	fmt.Printf("Day 2 | Part 1: %d\n", sum)
 }

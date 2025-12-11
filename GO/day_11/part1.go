@@ -8,7 +8,7 @@ import (
 
 func Part1(f string) {
 	data := utils.ReadStringLines(path[f])
-	adj := createMap(data)
+	adj := createAdjMap(data)
 
 	var dfs func(s string) int
 	dfs = func(s string) int {
@@ -18,8 +18,8 @@ func Part1(f string) {
 
 		total := 0
 
-		for k := range adj[s] {
-			total += dfs(k)
+		for _, v := range adj[s] {
+			total += dfs(v)
 		}
 
 		return total

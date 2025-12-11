@@ -14,7 +14,7 @@ type state struct {
 
 func Part2(f string) {
 	data := utils.ReadStringLines(path[f])
-	adj := createMap(data)
+	adj := createAdjMap(data)
 	memo := make(map[state]int)
 
 	var dfs func(string, bool, bool) int
@@ -32,11 +32,11 @@ func Part2(f string) {
 
 		total := 0
 
-		for k := range adj[s] {
-			nf := f || k == "fft"
-			nd := d || k == "dac"
+		for _, v := range adj[s] {
+			nf := f || v == "fft"
+			nd := d || v == "dac"
 
-			total += dfs(k, nf, nd)
+			total += dfs(v, nf, nd)
 		}
 
 		memo[state{s, f, d}] = total

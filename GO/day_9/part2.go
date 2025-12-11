@@ -29,8 +29,13 @@ func Part2(f string) {
 				continue
 			}
 
+			recMinX := min(a.x, b.x) + 1
+			recMaxX := max(a.x, b.x) - 1
+			recMinY := min(a.y, b.y) + 1
+			recMaxY := max(a.y, b.y) - 1
+
 			for _, edge := range edges {
-				if edge.isIntersect(points[i], points[j]) {
+				if edge.isIntersect(recMinX, recMaxX, recMinY, recMaxY) {
 					continue hot_path
 				}
 			}

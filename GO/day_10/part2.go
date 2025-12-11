@@ -12,7 +12,7 @@ import (
 	"aoc2025/utils"
 )
 
-type State struct {
+type state struct {
 	i   int
 	v   []int
 	sum int
@@ -303,7 +303,7 @@ func branchAndBoundFloat(rref [][]float64, pivots []int, n int, target []int, bu
 	}
 
 	best := math.MaxInt
-	stack := []State{{0, make([]int, numFree), 0}}
+	stack := []state{{0, make([]int, numFree), 0}}
 
 	for len(stack) > 0 {
 		s := stack[len(stack)-1]
@@ -354,7 +354,7 @@ func branchAndBoundFloat(rref [][]float64, pivots []int, n int, target []int, bu
 			nv := make([]int, len(s.v))
 			copy(nv, s.v)
 			nv[s.i] = x
-			stack = append(stack, State{s.i + 1, nv, s.sum + x})
+			stack = append(stack, state{s.i + 1, nv, s.sum + x})
 		}
 	}
 

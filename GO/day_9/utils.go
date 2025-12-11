@@ -16,12 +16,7 @@ type segment struct {
 	end   point
 }
 
-func (s *segment) isIntersect(a, b point) bool {
-	recMinX := min(a.x, b.x) + 1
-	recMaxX := max(a.x, b.x) - 1
-	recMinY := min(a.y, b.y) + 1
-	recMaxY := max(a.y, b.y) - 1
-
+func (s *segment) isIntersect(recMinX, recMaxX, recMinY, recMaxY int) bool {
 	edgeMinX := min(s.start.x, s.end.x)
 	edgeMaxX := max(s.start.x, s.end.x)
 	edgeMinY := min(s.start.y, s.end.y)

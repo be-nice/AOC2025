@@ -10,8 +10,12 @@ func Part1(f string) {
 	data := utils.ReadStringLines(path[f])
 	adj := createAdjMap(data)
 
+	memo := make(map[string]int)
 	var dfs func(s string) int
 	dfs = func(s string) int {
+		if val, ok := memo[s]; ok {
+			return val
+		}
 		if s == "out" {
 			return 1
 		}
@@ -22,6 +26,7 @@ func Part1(f string) {
 			total += dfs(v)
 		}
 
+		memo[s] = total
 		return total
 	}
 

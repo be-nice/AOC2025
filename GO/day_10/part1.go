@@ -2,6 +2,7 @@ package day10
 
 import (
 	"fmt"
+	"math"
 	"strconv"
 	"strings"
 	"sync"
@@ -83,7 +84,7 @@ func parseBtn(s string) []uint16 {
 
 func minPresses(target uint16, buttons []uint16, res chan int) {
 	n := len(buttons)
-	best := -1
+	best := math.MaxInt
 
 	for mask := range 1 << n {
 		state := uint16(0)
@@ -93,11 +94,14 @@ func minPresses(target uint16, buttons []uint16, res chan int) {
 			if mask&(1<<i) != 0 {
 				state ^= buttons[i]
 				presses++
+				if presses >= best {
+					break
+				}
 			}
 		}
 
 		if state == target {
-			if best == -1 || presses < best {
+			if presses < best {
 				best = presses
 			}
 		}
